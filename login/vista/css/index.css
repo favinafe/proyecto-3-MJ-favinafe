@@ -1,0 +1,140 @@
+body{
+
+    margin:0;
+    height:100vh;
+
+    background-image:url("/img/indexFondo.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.overlay{
+
+    width:100%;
+    height:100vh;
+
+    background:rgba(180,190,230,.35);
+
+    position:relative;
+}
+
+.login-card{
+
+    width:380px;
+    height:565px;
+
+    background:white;
+
+    border-radius:40px;
+
+    margin-left:50px;
+
+    padding:45px;
+}
+
+.logo{
+
+    width:120px;
+}
+
+.titulo{
+
+    font-size:28px;
+    font-weight:bold;
+    font-style:italic;
+}
+
+.etiqueta{
+
+    font-size:22px;
+    font-weight:bold;
+    font-style:italic;
+}
+
+.campo{
+
+    border:none;
+    background:#dddddd;
+
+    border-radius:40px;
+
+    height:45px;
+
+    box-shadow:none;
+}
+
+.campo:focus{
+
+    box-shadow:none;
+    background:#dddddd;
+}
+
+.boton-confirmar{
+
+    background:#d9f1f4;
+
+    width:200px;
+    height:40px;
+
+    border-radius:40px;
+
+    font-size:20px;
+    font-weight:bold;
+    font-style:italic;
+
+    border:none;
+
+    display:block;
+
+    margin:80px auto 0;
+}
+
+.boton-confirmar:hover{
+
+    background:#c9e7eb;
+}
+
+.boton-ayuda{
+
+    position:absolute;
+
+    bottom:35px;
+    right:80px;
+
+    width:250px;
+    height:45px;
+
+    background:#d9f1f4;
+
+    border:none;
+
+    border-radius:40px;
+
+    font-size:20px;
+    font-weight:bold;
+    font-style:italic;
+}
+
+.boton-ayuda:hover{
+
+    background:#c9e7eb;
+}
+
+@media(max-width:768px){
+
+.login-card{
+
+    margin:auto;
+
+    width:90%;
+}
+
+.boton-ayuda{
+
+    right:50%;
+    transform:translateX(50%);
+}
+}

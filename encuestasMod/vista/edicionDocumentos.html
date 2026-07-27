@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Crear Documento</title>
+    <link rel="stylesheet" href="css/edicionDocumentos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container-fluid p-0">
+
+    <!-- Encabezado -->
+    <header class="bg-white shadow-sm py-3 px-4">
+
+        <div class="row align-items-center">
+
+            <div class="col-12 col-lg-2 text-center text-lg-start">
+
+                <img src="img.jpg" class="logo img-fluid" alt="Logo">
+
+            </div>
+
+            <div class="col-12 col-lg-8 text-center my-3 my-lg-0">
+
+                <h1 class="titulo">
+                    Gestor de documentos y encuestas
+                </h1>
+
+            </div>
+
+            <div class="col-12 col-lg-2 text-center text-lg-end">
+
+                <button class="btn boton">
+                    Atrás
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- Contenido -->
+
+    <main class="container py-5">
+
+        <div class="row justify-content-between align-items-end">
+
+            <!-- Formulario -->
+
+            <div class="col-12 col-lg-5">
+
+                <div class="mb-4">
+
+                    <label class="form-label etiqueta">
+                        Título:
+                    </label>
+
+                    <input type="text" class="form-control campo">
+
+                </div>
+
+
+                <div class="mb-4">
+
+                    <label class="form-label etiqueta">
+                        Descripción:
+                    </label>
+
+                    <textarea class="form-control campo area"></textarea>
+
+                </div>
+
+
+                <div class="mb-4">
+
+                    <label class="form-label etiqueta">
+                        Archivo:
+                    </label>
+
+                    <input type="file" class="form-control campo">
+
+                </div>
+
+
+                <div class="mb-4">
+
+                    <label class="form-label etiqueta">
+                        Categoría:
+                    </label>
+
+                    <select class="form-select campo">
+
+                        <option>Seleccione...</option>
+                        <option>Nefrología</option>
+                        <option>Cardiología</option>
+                        <option>Pediatría</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- Botón -->
+
+            <div class="col-12 col-lg-3 text-center text-lg-end mt-4 mt-lg-0">
+
+                <button class="btn boton px-5">
+                    Crear
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+
+</html>
