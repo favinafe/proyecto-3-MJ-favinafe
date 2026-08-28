@@ -9,8 +9,8 @@ Felipe Borca
 Victoria Priscal
 Ignacio Núñez
 
-El sistema se separa en dos modulos. Uno el cual permite crear y gestionar
-documentos medicos y encuestas de modo tal que sean accesibles mediante un QR.
+El sistema se separa en dos modulos. Uno que permite crear y gestionar
+documentos medicos y encuestas accesibles mediante un QR.
 El otro permite gestionar solicitudes y traslados de hambulancias.
 
 Tecnologías utilizadas
@@ -31,47 +31,57 @@ Tecnologías utilizadas
 
 
  Estructura del proyecto
-
- -README.md
- -elementosComunes- En esta carpeta se gurdan todos los elementos de uso común de la aplicación
-   -autentificaciones
-   -conexiónDB
-   -imagenes- Guarda assets de uso común
-   -Permisos
-   -seguridad
-   -validaciones
- -encuestasMod- Esta capreta almacena todos los elementos asociados al modulo de encuestas
-   -controlador
-   -modelo
-   -vista- Guarda los HTML, CSS y programas de java
- -login
-    -controlador
-   -modelo
-   -vista- Guarda los HTML, CSS y programas de java
- -transporteMod
-   -controlador
-   -modelo
-   -vista- Guarda los HTML, CSS y programas de java
-
+```
+proyecto-3-MJ-favinafe
+├──elementosComunes
+│      ├──autentificaciones
+│      ├──conexiónDB  
+│      ├──imagenes 
+│      ├──Permisos
+│      ├──seguridad
+│      └──validaciones
+├──encuestasMod
+│      ├──controlador
+│      ├──modelo
+│      └──vista-  
+│           ├──css
+│           ├──html
+│           └──js
+├──transporteMod
+│      ├──controlador
+│      ├──-modelo
+│      └──-vista 
+│            ├──css 
+│            ├──html            
+│            └──js
+│
+├──login
+│    ├──-controlador
+│    ├──-modelo
+│    └──-vista 
+│          ├──css
+│          ├──html
+│          └──js
+├──documentación
+└── -README.md
+```
 
  Instalación
 
-1- Clonar el repositorio
-
+1- Clonar el repositorio con el siguiente comando:
 git clone https://github.com/favinafe/Proyecto
 
-2- Abrir la carpeta del proyecto.
+2- Copiar la carpeta proyecto-3-MJ-favinafe/ dentro de htdocs/ (XAMPP) 
+    
+3- Abrir http://localhost/sigsm/ en el navegador.
 
-3- Ejecutar index.html.
+
 
 
  Convención de commits
 
-- feat → Nueva funcionalidad
-- fix → Corrección de errores
-- style → Cambios de diseño
-- docs → Documentación
-- refactor → Reorganización del código
-
-
-
+- feat - se usa cuando se añade una nueva funcionalidad.
+- fix - se usa al corregir un error.
+- style - se usa si se cambia algun estilo de css, un html, o un script de js.
+- docs - se usa cuando se modifica algun archivo de la documentación o el readme.
+- refactor - se usa cuando se reordenan directorios o cambian de nombre algun archivo.
