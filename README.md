@@ -1,6 +1,8 @@
 repositorio: https://github.com/favinafe/Proyecto
 
+
 Descripción:
+
 
 Proyecto desarrollado por 3ºMJ del ISBO.
 Integrantes:
@@ -9,16 +11,19 @@ Felipe Borca
 Victoria Priscal
 Ignacio Núñez
 
-El sistema se separa en dos modulos. Uno que permite crear y gestionar
-documentos medicos y encuestas accesibles mediante un QR.
-El otro permite gestionar solicitudes y traslados de hambulancias.
+
+El sistema se separa en dos módulos. Uno que permite crear y gestionar
+documentos médicos y encuestas accesibles mediante un QR.
+El otro permite gestionar solicitudes y traslados de ambulancias.
+
 
 Tecnologías utilizadas
+
 
 - HTML
 - CSS
 - JavaScript
-- Bootstrap 
+- Bootstrap
 - PHP
 - MariaDB
 - Debian
@@ -30,35 +35,37 @@ Tecnologías utilizadas
 -VirtualBox
 
 
- Estructura del proyecto
+
+
+Estructura del proyecto
 ```
 proyecto-3-MJ-favinafe
 ├──elementosComunes
 │      ├──autentificaciones
-│      ├──conexiónDB  
-│      ├──imagenes 
+│      ├──scriptsDDL
+│      ├──imagenes
 │      ├──Permisos
 │      ├──seguridad
 │      └──validaciones
 ├──encuestasMod
 │      ├──controlador
 │      ├──modelo
-│      └──vista-  
+│      └──vista- 
 │           ├──css
 │           ├──html
 │           └──js
 ├──transporteMod
 │      ├──controlador
 │      ├──-modelo
-│      └──-vista 
-│            ├──css 
-│            ├──html            
+│      └──-vista
+│            ├──css
+│            ├──html           
 │            └──js
 │
 ├──login
 │    ├──-controlador
 │    ├──-modelo
-│    └──-vista 
+│    └──-vista
 │          ├──css
 │          ├──html
 │          └──js
@@ -66,22 +73,30 @@ proyecto-3-MJ-favinafe
 └── -README.md
 ```
 
- Instalación
+
+Instalación
+
 
 1- Clonar el repositorio con el siguiente comando:
 git clone https://github.com/favinafe/Proyecto
 
-2- Copiar la carpeta proyecto-3-MJ-favinafe/ dentro de htdocs/ (XAMPP) 
-    
+
+2- Copiar la carpeta proyecto-3-MJ-favinafe/ dentro de htdocs/ (XAMPP)
+  
 3- Abrir http://localhost/sigsm/ en el navegador.
 
 
 
 
- Convención de commits
+
+
+
+
+Convención de commits
+
 
 - feat - se usa cuando se añade una nueva funcionalidad.
 - fix - se usa al corregir un error.
-- style - se usa si se cambia algun estilo de css, un html, o un script de js.
-- docs - se usa cuando se modifica algun archivo de la documentación o el readme.
-- refactor - se usa cuando se reordenan directorios o cambian de nombre algun archivo.
+- style - se usa si se cambia algún estilo de css, un html, o un script de js.
+- docs - se usa cuando se modifica algún archivo de la documentación o el readme.
+- refactor - se usa cuando se reordenan directorios o cambian de nombre algún archivo.
