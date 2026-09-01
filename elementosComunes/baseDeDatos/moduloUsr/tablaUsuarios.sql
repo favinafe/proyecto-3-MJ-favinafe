@@ -13,15 +13,15 @@ CREATE TABLE `usuarioRol` (
   `idUsuario` int(11) NOT NULL,
   `idRol` int(11) PRIMARY KEY ,
   `fechaAsignacion` DATE DEFAULT (CURDATE()) NOT NULL,
-    PRIMARY KEY (),
+    PRIMARY KEY (idUsuario,idRol),
 
-    CONSTRAINT fk_ur_usuario
+    CONSTRAINT fkUsCaUsr
     FOREIGN KEY (idUsuario)
     REFERENCES usuario (idUsuario)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
     
-    CONSTRAINT fk_ur_rol
+    CONSTRAINT fkUsCaCat
     FOREIGN KEY (idRol)
     REFERENCES rol (idRol)
     ON DELETE RESTRICT
