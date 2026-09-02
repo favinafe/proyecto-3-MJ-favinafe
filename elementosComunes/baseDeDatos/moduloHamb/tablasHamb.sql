@@ -5,7 +5,7 @@ CREATE TABLE 'tipoElemento' (
 
     PRIMARY KEY (idTipoElemento)
 )  
-CREATE TABLE 'compativilidad' (
+CREATE TABLE 'compatibilidad' (
     'idTipoVehiculo' int(11) NOT NULL,
     'idTipoElemento' int(11) NOT NULL,
     

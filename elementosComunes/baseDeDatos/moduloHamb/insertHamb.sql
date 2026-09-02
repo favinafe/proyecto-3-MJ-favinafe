@@ -9,7 +9,7 @@ INSERT INTO tipoVehiculo (nombre, fechaEnvio) VALUES
 ('Ambulancia avanzada', '2026-09-01'),
 ('Unidad de traslado', '2026-09-02');
 
-INSERT INTO compativilidad (idTipoVehiculo, idTipoElemento) VALUES
+INSERT INTO compatibilidad (idTipoVehiculo, idTipoElemento) VALUES
 (1, 1),
 (1, 2),
 (2, 1),
