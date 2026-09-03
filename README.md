@@ -1,4 +1,4 @@
-# Proyecto
+# Proyecto S.I.G.S.M
 
 Proyecto desarrollado por estudiantes de **3º MJ del ISBO**.
 
