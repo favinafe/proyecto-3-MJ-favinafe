@@ -4,7 +4,7 @@ CREATE TABLE 'documento' (
     'idUsuario' int(11)  NOT NULL,
     'titulo' varchar(40) NOT NULL UNIQUE,
     'descripcion' varchar(160) NOT NULL UNIQUE,
-    'archivoUrl' varchar(160) NOT NULL UNIQUE,
+    'archivoUrl' varchar(160) NOT NULL UNIQUE CHECK (columna LIKE '%/%'),
     'fechaCarga' DATE DEFAULT (CURDATE()) NOT NULL,
     'fechaAsignacion' DATE DEFAULT (CURDATE()) NOT NULL,
     'activo' tinyint(1) NOT NULL DEFAULT 1,

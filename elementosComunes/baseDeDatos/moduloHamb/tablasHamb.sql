@@ -76,7 +76,7 @@ CREATE TABLE 'ruta' (
     'origen' varchar(40) NOT NULL,
     'destino' varchar(40) NOT NULL,
     'descripcion' varchar(40) NOT NULL,
-    'distanciaKm' varchar(40) NOT NULL,
+    'distanciaKm' DOUBLE(40) CHECK ('distanciaKm' > 0) NOT NULL,
 
     PRIMARY KEY (idRuta)
 ) 
