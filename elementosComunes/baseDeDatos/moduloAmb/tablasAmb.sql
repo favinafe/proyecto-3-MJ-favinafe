@@ -1,11 +1,11 @@
-CREATE TABLE 'tipoElemento' (
+CREATE TABLE tipoElemento (
     'idTipoElemento' int(11) AUTO_INCREMENT NOT NULL,
     'nombre' varchar(40) NOT NULL,
     'descripcion' varchar(40) NOT NULL,
 
     PRIMARY KEY (idTipoElemento)
-)  
-CREATE TABLE 'compatibilidad' (
+);  
+CREATE TABLE compatibilidad (
     'idTipoVehiculo' int(11) NOT NULL,
     'idTipoElemento' int(11) NOT NULL,
     
@@ -21,9 +21,9 @@ CREATE TABLE 'compatibilidad' (
         REFERENCES tipoElemento (idTipoElemento)
         ON DELETE CASCADE
         ON UPDATE CASCADE,
-) 
+); 
 
-CREATE TABLE 'solicitudTraslado' (
+CREATE TABLE solicitudTraslado (
     'idSolicitud' int(11) AUTO_INCREMENT NOT NULL,           
     'ciPaciente' int(11) NOT NULL,      
     'idTipoElemento' int(11) NOT NULL,     
@@ -62,16 +62,16 @@ CREATE TABLE 'solicitudTraslado' (
         REFERENCES usuario (idUsuario)
         ON DELETE CASCADE
         ON UPDATE CASCADE,
-) 
-CREATE TABLE 'paciente' (
+); 
+CREATE TABLE paciente (
     'ciPaciente' int(9) AUTO_INCREMENT NOT NULL,
     'nombre' varchar(40) NOT NULL,
     'apellido' varchar(40) NOT NULL,
     'fechaNacimiento' DATE NOT NULL,
 
     PRIMARY KEY (ciPaciente)
-) 
-CREATE TABLE 'ruta' (
+); 
+CREATE TABLE ruta (
     'idRuta' int(11) AUTO_INCREMENT NOT NULL,
     'origen' varchar(40) NOT NULL,
     'destino' varchar(40) NOT NULL,
@@ -79,23 +79,23 @@ CREATE TABLE 'ruta' (
     'distanciaKm' DOUBLE(40) CHECK ('distanciaKm' > 0) NOT NULL,
 
     PRIMARY KEY (idRuta)
-) 
+); 
 
-CREATE TABLE 'canalSolicitud' (
+CREATE TABLE canalSolicitud (
     'idCanal' int(11) AUTO_INCREMENT NOT NULL,
     'nombre' varchar(40),
 
     PRIMARY KEY (idCanal)
-) 
+); 
 
-CREATE TABLE 'estadoTraslado' (
+CREATE TABLE estadoTraslado (
     'idEstado' int(11) AUTO_INCREMENT NOT NULL,
-    'nombre' varchar(40) 
+    'nombre' varchar(40), 
 
     PRIMARY KEY (idEstado)
-) 
+); 
 
-CREATE TABLE 'historialEstado' (
+CREATE TABLE historialEstado (
     'idHistorial' int(11) AUTO_INCREMENT NOT NULL,
     'idTraslado' int(11) NOT NULL,
     'idEstado' int(11) NOT NULL,
@@ -114,18 +114,18 @@ CREATE TABLE 'historialEstado' (
         REFERENCES estadoTraslado (idEstado)
         ON DELETE CASCADE
         ON UPDATE CASCADE,   
-) 
+); 
 
 
-CREATE TABLE 'proveedor' (
+CREATE TABLE proveedor (
     'idProveedor' int(11) AUTO_INCREMENT NOT NULL,
     'nombre' varchar(40) NOT NULL,
     'contacto' varchar(40) NOT NULL,
 
     PRIMARY KEY (idProveedor),
-) 
+); 
 
-CREATE TABLE 'traslado' (
+CREATE TABLE traslado (
     'idTraslado' int(11) AUTO_INCREMENT NOT NULL,
     'idSolicitud' int(11) NOT NULL,
     'idVehiculo' int(11) NOT NULL,
@@ -169,17 +169,17 @@ CREATE TABLE 'traslado' (
         ON DELETE CASCADE
         ON UPDATE CASCADE
 
-) 
+); 
 
-CREATE TABLE 'tipoVehiculo' (
+CREATE TABLE tipoVehiculo (
     'idTipoVehiculo' int(11) AUTO_INCREMENT NOT NULL,
     'nombre' varchar(40) NOT NULL,
     'fechaEnvio' DATE DEFAULT (CURDATE()) NOT NULL,
 
     PRIMARY KEY (idTipoVehiculo)
-) 
+); 
 
-CREATE TABLE 'vehiculo' (
+CREATE TABLE vehiculo (
     'idVehiculo' int(11) AUTO_INCREMENT NOT NULL,
     'idTipoVehiculo' int(11) NOT NULL,
     'matricula' varchar(7) NOT NULL UNIQUE,
@@ -194,21 +194,21 @@ CREATE TABLE 'vehiculo' (
         REFERENCES tipoVehiculo (idTipoVehiculo)
         ON DELETE CASCADE
         ON UPDATE CASCADE
-) 
+); 
 
-CREATE TABLE 'enfermero' (
+CREATE TABLE enfermero (
     'idEnfermero' int(11) AUTO_INCREMENT NOT NULL,
     'CI' varchar(9) NOT NULL UNIQUE,
     'nombre' varchar(40) NOT NULL,
     'apellido' varchar(40) NOT NULL,
 
     PRIMARY KEY (idEnfermero)
-)
+);
 
-CREATE TABLE 'chofer' (
+CREATE TABLE chofer (
     'idChofer' int(11) AUTO_INCREMENT NOT NULL,
     'nombre' varchar(40) NOT NULL,
     'apellido' varchar(40) NOT NULL,
 
     PRIMARY KEY (idChofer)
-) 
+); 

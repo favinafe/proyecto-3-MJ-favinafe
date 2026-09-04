@@ -1,10 +1,10 @@
-CREATE TABLE 'documento' (
+CREATE TABLE documento (
     'idDocumento' int(11) AUTO_INCREMENT NOT NULL,
     'idCategoria' int(11)  NOT NULL, 
     'idUsuario' int(11)  NOT NULL,
     'titulo' varchar(40) NOT NULL UNIQUE,
     'descripcion' varchar(160) NOT NULL UNIQUE,
-    'archivoUrl' varchar(160) NOT NULL UNIQUE CHECK (columna LIKE '%/%'),
+    'archivoUrl' varchar(160) NOT NULL UNIQUE CHECK (archivoUrl LIKE '%/%'),
     'fechaCarga' DATE DEFAULT (CURDATE()) NOT NULL,
     'fechaAsignacion' DATE DEFAULT (CURDATE()) NOT NULL,
     'activo' tinyint(1) NOT NULL DEFAULT 1,
@@ -21,18 +21,18 @@ CREATE TABLE 'documento' (
         REFERENCES usuario (idUsuario)
         ON DELETE CASCADE
         ON UPDATE CASCADE
-) 
+); 
 
-CREATE TABLE 'categoria' (
+CREATE TABLE categoria (
     'idCategoria' int(11) AUTO_INCREMENT NOT NULL,
     'nombre' varchar(30),
     'descripcion' varchar(150),
     'codigoQrUrl' varchar(150),
 
     PRIMARY KEY (idCategoria)
-) 
+); 
 
-CREATE TABLE 'encuesta'(
+CREATE TABLE encuesta(
     'idEncuesta' int(11) AUTO_INCREMENT NOT NULL,
     'idCategoria'int(11) NOT NULL,
     'titulo' varchar(30),
@@ -45,9 +45,9 @@ CREATE TABLE 'encuesta'(
         ON DELETE CASCADE
         ON UPDATE CASCADE
 
-) 
+); 
 
-CREATE TABLE 'respuestaEncuesta' (
+CREATE TABLE respuestaEncuesta (
     'idRespuestaEncuesta' int(11) AUTO_INCREMENT NOT NULL,
     'idEncuesta' int(11) NOT NULL,
     'fechaEnvio' DATE DEFAULT (CURDATE()) NOT NULL,
@@ -59,9 +59,9 @@ CREATE TABLE 'respuestaEncuesta' (
         REFERENCES encuesta (idEncuesta)
         ON DELETE CASCADE
         ON UPDATE CASCADE
-) 
+); 
 
-CREATE TABLE 'respuestaPregunta'(
+CREATE TABLE respuestaPregunta(
     'idRespuestaPregunta'int(11) AUTO_INCREMENT NOT NULL,
     'idRespuestaEncuesta'int(11) NOT NULL,
     'idPregunta'int(11) NOT NULL,
@@ -85,9 +85,9 @@ CREATE TABLE 'respuestaPregunta'(
         REFERENCES opcionRespuesta (idOpcion)
         ON DELETE CASCADE
         ON UPDATE CASCADE
-) 
+); 
 
-CREATE TABLE 'opcionRespuesta'(
+CREATE TABLE opcionRespuesta(
     'idOpcion' int(11) AUTO_INCREMENT NOT NULL,
     'idPregunta' int(11) NOT NULL,
     'textoOpcion' varchar(60),
@@ -99,13 +99,13 @@ CREATE TABLE 'opcionRespuesta'(
         REFERENCES pregunta (idPregunta)
         ON DELETE CASCADE
         ON UPDATE CASCADE
-)
+);
 
-CREATE TABLE 'pregunta' (
+CREATE TABLE pregunta (
     'idPregunta' int(11) AUTO_INCREMENT NOT NULL,
     'idEncuesta' int(11) NOT NULL,
     'txtPregunta' varchar(60),
-    'orden' int 
+    'orden' int, 
 
     PRIMARY KEY (idPregunta),
 
@@ -114,4 +114,4 @@ CREATE TABLE 'pregunta' (
         REFERENCES encuesta (idEncuesta)
         ON DELETE CASCADE
         ON UPDATE CASCADE
-)
+);

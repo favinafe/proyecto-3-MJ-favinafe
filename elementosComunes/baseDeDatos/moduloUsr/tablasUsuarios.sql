@@ -1,4 +1,4 @@
-CREATE TABLE 'usuario' (
+CREATE TABLE usuario (
   'idUsuario' int(11) AUTO_INCREMENT NOT NULL ,
   'nombreUsuario' varchar(50) NOT NULL CHECK (octet_length('nombresuario') >= 4),
   'contrasenaHash' varchar(255) NOT NULL,
@@ -7,9 +7,9 @@ CREATE TABLE 'usuario' (
   'email' varchar(120) NOT NULL CHECK ('email' like '%_@_%.__%'),
   'activo' tinyint(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (idUsuario)
-) 
+); 
 
-CREATE TABLE 'usuarioRol' (
+CREATE TABLE usuarioRol (
   'idUsuario' int(11) NOT NULL,
   'idRol' int(11) PRIMARY KEY ,
   'fechaAsignacion' DATE DEFAULT (CURDATE()) NOT NULL,
@@ -27,11 +27,11 @@ CREATE TABLE 'usuarioRol' (
     ON DELETE RESTRICT
     ON UPDATE CASCADE
 
-) 
+); 
 
-CREATE TABLE 'rol' (
+CREATE TABLE rol (
    'idRol' int(11) AUTO_INCREMENT NOT NULL,
    'nombreRol' ENUM('admin','usrHambulncia','usrDocs') NOT NULL UNIQUE,
    'descripcion' varchar(160) NULL,
    PRIMARY KEY ('idRol') 
-) 
+); 
