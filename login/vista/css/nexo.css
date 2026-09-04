@@ -63,6 +63,8 @@ body{
     font-style:italic;
 
     font-weight:bold;
+
+    color: black;
 }
 
 @media (max-width:768px){
