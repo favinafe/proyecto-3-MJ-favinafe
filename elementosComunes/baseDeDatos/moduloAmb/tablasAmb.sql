@@ -1,13 +1,13 @@
 CREATE TABLE tipoElemento (
-    'idTipoElemento' int(11) AUTO_INCREMENT NOT NULL,
-    'nombre' varchar(40) NOT NULL,
-    'descripcion' varchar(40) NOT NULL,
+    idTipoElemento int(11) AUTO_INCREMENT NOT NULL,
+    nombre varchar(40) NOT NULL,
+    descripcion varchar(40) NOT NULL,
 
     PRIMARY KEY (idTipoElemento)
 );  
 CREATE TABLE compatibilidad (
-    'idTipoVehiculo' int(11) NOT NULL,
-    'idTipoElemento' int(11) NOT NULL,
+    idTipoVehiculo int(11) NOT NULL,
+    idTipoElemento int(11) NOT NULL,
     
     PRIMARY KEY (idTipoVehiculo,idTipoElemento),
     
@@ -24,16 +24,16 @@ CREATE TABLE compatibilidad (
 ); 
 
 CREATE TABLE solicitudTraslado (
-    'idSolicitud' int(11) AUTO_INCREMENT NOT NULL,           
-    'ciPaciente' int(11) NOT NULL,      
-    'idTipoElemento' int(11) NOT NULL,     
-    'idRuta' int(11) NOT NULL,                   
-    'idCanal' int(11) NOT NULL,           
-    'idUsuario' int(11) NOT NULL,              
-    'fechaSolicitud' DATE DEFAULT (CURDATE()) NOT NULL,
-    'motivo' varchar(100),      
-    'estadoSolicitud' ENUM('pendiente', 'enCurso', 'finalizado') NOT NULL,    
-    'descripcion' varchar(100),        
+    idSolicitud int(11) AUTO_INCREMENT NOT NULL,           
+    ciPaciente int(11) NOT NULL,      
+    idTipoElemento int(11) NOT NULL,     
+    idRuta int(11) NOT NULL,                   
+    idCanal int(11) NOT NULL,           
+    idUsuario int(11) NOT NULL,              
+    fechaSolicitud DATE DEFAULT (CURDATE()) NOT NULL,
+    motivo varchar(100),      
+    estadoSolicitud ENUM('pendiente', 'enCurso', 'finalizado') NOT NULL,    
+    descripcion varchar(100),        
 
     PRIMARY KEY (idSolicitud),
     
@@ -64,43 +64,43 @@ CREATE TABLE solicitudTraslado (
         ON UPDATE CASCADE,
 ); 
 CREATE TABLE paciente (
-    'ciPaciente' int(9) AUTO_INCREMENT NOT NULL,
-    'nombre' varchar(40) NOT NULL,
-    'apellido' varchar(40) NOT NULL,
-    'fechaNacimiento' DATE NOT NULL,
+    ciPaciente int(9) AUTO_INCREMENT NOT NULL,
+    nombre varchar(40) NOT NULL,
+    apellido varchar(40) NOT NULL,
+    fechaNacimiento DATE NOT NULL,
 
     PRIMARY KEY (ciPaciente)
 ); 
 CREATE TABLE ruta (
-    'idRuta' int(11) AUTO_INCREMENT NOT NULL,
-    'origen' varchar(40) NOT NULL,
-    'destino' varchar(40) NOT NULL,
-    'descripcion' varchar(40) NOT NULL,
-    'distanciaKm' DOUBLE(40) CHECK ('distanciaKm' > 0) NOT NULL,
+    idRuta int(11) AUTO_INCREMENT NOT NULL,
+    origen varchar(40) NOT NULL,
+    destino varchar(40) NOT NULL,
+    descripcion varchar(40) NOT NULL,
+    distanciaKm DOUBLE(40) CHECK ('distanciaKm > 0') NOT NULL,
 
     PRIMARY KEY (idRuta)
 ); 
 
 CREATE TABLE canalSolicitud (
-    'idCanal' int(11) AUTO_INCREMENT NOT NULL,
-    'nombre' varchar(40),
+    idCanal int(11) AUTO_INCREMENT NOT NULL,
+    nombre varchar(40),
 
     PRIMARY KEY (idCanal)
 ); 
 
 CREATE TABLE estadoTraslado (
-    'idEstado' int(11) AUTO_INCREMENT NOT NULL,
-    'nombre' varchar(40), 
+    idEstado int(11) AUTO_INCREMENT NOT NULL,
+    nombre varchar(40), 
 
     PRIMARY KEY (idEstado)
 ); 
 
 CREATE TABLE historialEstado (
-    'idHistorial' int(11) AUTO_INCREMENT NOT NULL,
-    'idTraslado' int(11) NOT NULL,
-    'idEstado' int(11) NOT NULL,
-    'horaLlegada' DATETIME DEFAULT CURRENT_TIMESTAMP,
-    'observaciones' varchar(100),
+    idHistorial int(11) AUTO_INCREMENT NOT NULL,
+    idTraslado int(11) NOT NULL,
+    idEstado int(11) NOT NULL,
+    horaLlegada DATETIME DEFAULT CURRENT_TIMESTAMP,
+    observaciones varchar(100),
     PRIMARY KEY (idHistorial),
     
     CONSTRAINT fkHisTra
@@ -118,23 +118,23 @@ CREATE TABLE historialEstado (
 
 
 CREATE TABLE proveedor (
-    'idProveedor' int(11) AUTO_INCREMENT NOT NULL,
-    'nombre' varchar(40) NOT NULL,
-    'contacto' varchar(40) NOT NULL,
+    idProveedor int(11) AUTO_INCREMENT NOT NULL,
+    nombre varchar(40) NOT NULL,
+    contacto varchar(40) NOT NULL,
 
     PRIMARY KEY (idProveedor),
 ); 
 
 CREATE TABLE traslado (
-    'idTraslado' int(11) AUTO_INCREMENT NOT NULL,
-    'idSolicitud' int(11) NOT NULL,
-    'idVehiculo' int(11) NOT NULL,
-    'idChofer' int(11) NOT NULL,
-    'idEnfermero' int(11) NOT NULL,
-    'idProveedor' int(11) NOT NULL,
-    'idRuta' int(11) NOT NULL,
-    'horaSalida' DATETIME NOT NULL,
-    'horaLlegada' DATETIME DEFAULT CURRENT_TIMESTAMP,
+    idTraslado int(11) AUTO_INCREMENT NOT NULL,
+    idSolicitud int(11) NOT NULL,
+    idVehiculo int(11) NOT NULL,
+    idChofer int(11) NOT NULL,
+    idEnfermero int(11) NOT NULL,
+    idProveedor int(11) NOT NULL,
+    idRuta int(11) NOT NULL,
+    horaSalida DATETIME NOT NULL,
+    horaLlegada DATETIME DEFAULT CURRENT_TIMESTAMP,
     
     PRIMARY KEY (idTraslado),
     
@@ -172,20 +172,20 @@ CREATE TABLE traslado (
 ); 
 
 CREATE TABLE tipoVehiculo (
-    'idTipoVehiculo' int(11) AUTO_INCREMENT NOT NULL,
-    'nombre' varchar(40) NOT NULL,
-    'fechaEnvio' DATE DEFAULT (CURDATE()) NOT NULL,
+    idTipoVehiculo int(11) AUTO_INCREMENT NOT NULL,
+    nombre varchar(40) NOT NULL,
+    fechaEnvio DATE DEFAULT (CURDATE()) NOT NULL,
 
     PRIMARY KEY (idTipoVehiculo)
 ); 
 
 CREATE TABLE vehiculo (
-    'idVehiculo' int(11) AUTO_INCREMENT NOT NULL,
-    'idTipoVehiculo' int(11) NOT NULL,
-    'matricula' varchar(7) NOT NULL UNIQUE,
-    'marca' varchar(40) NOT NULL,
-    'modelo' varchar(40) NOT NULL,
-    'activo' tinyint(1) NOT NULL DEFAULT 1,
+    idVehiculo int(11) AUTO_INCREMENT NOT NULL,
+    idTipoVehiculo int(11) NOT NULL,
+    matricula varchar(7) NOT NULL UNIQUE,
+    marca varchar(40) NOT NULL,
+    modelo varchar(40) NOT NULL,
+    activo tinyint(1) NOT NULL DEFAULT 1,
 
     PRIMARY KEY (idVehiculo),
     
@@ -197,18 +197,18 @@ CREATE TABLE vehiculo (
 ); 
 
 CREATE TABLE enfermero (
-    'idEnfermero' int(11) AUTO_INCREMENT NOT NULL,
-    'CI' varchar(9) NOT NULL UNIQUE,
-    'nombre' varchar(40) NOT NULL,
-    'apellido' varchar(40) NOT NULL,
+    idEnfermero int(11) AUTO_INCREMENT NOT NULL,
+    CI varchar(9) NOT NULL UNIQUE,
+    nombre varchar(40) NOT NULL,
+    apellido varchar(40) NOT NULL,
 
     PRIMARY KEY (idEnfermero)
 );
 
 CREATE TABLE chofer (
-    'idChofer' int(11) AUTO_INCREMENT NOT NULL,
-    'nombre' varchar(40) NOT NULL,
-    'apellido' varchar(40) NOT NULL,
+    idChofer int(11) AUTO_INCREMENT NOT NULL,
+    nombre varchar(40) NOT NULL,
+    apellido varchar(40) NOT NULL,
 
     PRIMARY KEY (idChofer)
 ); 
