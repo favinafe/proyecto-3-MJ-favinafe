@@ -1,5 +1,5 @@
 CREATE TABLE usuario (
-  idUsuario int(11) AUTO_INCREMENT NOT NULL ,
+  idUsuario int(11) AUTO_INCREMENT,
   nombreUsuario varchar(50) NOT NULL CHECK (octet_length(nombresuario) >= 4),
   contrasenaHash varchar(255) NOT NULL,
   nombre varchar(50) NOT NULL,
@@ -32,6 +32,5 @@ CREATE TABLE usuarioRol (
 CREATE TABLE rol (
    idRol int(11) AUTO_INCREMENT NOT NULL,
    nombreRol ENUM('admin','usrHambulncia','usrDocs') NOT NULL UNIQUE,
-   descripcion varchar(160) NULL,
    PRIMARY KEY ('idRol') 
 ); 
