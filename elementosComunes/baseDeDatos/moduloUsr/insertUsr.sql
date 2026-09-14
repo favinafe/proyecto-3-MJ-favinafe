@@ -1,11 +1,11 @@
-INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `contrasenaHash`, `nombre`, `apellido`, `email`, `activo`) VALUES
+INSERT INTO `usuario` (`nombre_usuario`, `contrasenaHash`, `nombre`, `apellido`, `email`, `activo`) VALUES
 ( 'facosta', 'qwe', 'Fabian', 'Acosta', 'facosta@sigsm.uy', 1),
 ( 'mrivero', 'qwe', 'Marcela', 'Rivero', 'mrivero@sigsm.uy', 1),
 ( 'jgomez', 'qwe', 'Julian', 'Gomez', 'jgomez@sigsm.uy', 0),
 ( 'pepito', 'qwe', 'Jorge', 'Acosta', 'acosta@sigsm.uy', 0);
 
 
-INSERT INTO `rol` (`id_rol`, `nombre_rol`, `descripcion`) VALUES
+INSERT INTO `rol` (`nombre_rol`, `descripcion`) VALUES
 ( 'administrador', 'Acceso total al sistema y gestion de usuarios'),
 ( 'usuario_basico', 'Consulta y carga de documentacion de pacientes');
 
