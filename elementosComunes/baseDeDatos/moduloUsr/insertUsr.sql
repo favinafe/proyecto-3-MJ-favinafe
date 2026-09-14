@@ -1,4 +1,4 @@
-INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `contrasenha_hash`, `nombre`, `apellido`, `email`, `activo`) VALUES
+INSERT INTO `usuario` (`id_usuario`, `nombre_usuario`, `contrasenaHash`, `nombre`, `apellido`, `email`, `activo`) VALUES
 ( 'facosta', 'qwe', 'Fabian', 'Acosta', 'facosta@sigsm.uy', 1),
 ( 'mrivero', 'qwe', 'Marcela', 'Rivero', 'mrivero@sigsm.uy', 1),
 ( 'jgomez', 'qwe', 'Julian', 'Gomez', 'jgomez@sigsm.uy', 0),

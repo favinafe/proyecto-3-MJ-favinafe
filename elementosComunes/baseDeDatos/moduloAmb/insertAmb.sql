@@ -50,15 +50,15 @@ INSERT INTO proveedor (nombre, contacto) VALUES
 ('Emergencias Médicas Uruguay', '2400-2000'),
 ('Traslados Salud', '2400-3000');
 
-INSERT INTO enfermero (CI, nombre, apellido) VALUES
-('45678901', 'Laura', 'Martínez'),
-('47890123', 'Diego', 'Sosa'),
-('48901234', 'Sofía', 'Pereira');
+INSERT INTO enfermero (ciEnfermero, nombre, apellido) VALUES
+(45678901, 'Laura', 'Martínez'),
+(47890123, 'Diego', 'Sosa'),
+(48901234, 'Sofía', 'Pereira');
 
-INSERT INTO chofer (nombre, apellido) VALUES
-('Martín', 'González'),
-('Federico', 'López'),
-('Andrés', 'Silva');
+INSERT INTO chofer (ciChofer,nombre, apellido) VALUES
+(41239102,'Martín', 'González'),
+(56517828,'Federico', 'López'),
+(57527829,'Andrés', 'Silva');
 
 INSERT INTO vehiculo 
 (idTipoVehiculo, matricula, marca, modelo, activo) VALUES
@@ -74,10 +74,10 @@ INSERT INTO solicitudTraslado
 (53456789, 1, 3, 3, 1, '2026-09-02', 'Control médico', 'finalizado', 'Traslado desde domicilio.');
 
 INSERT INTO traslado 
-(idSolicitud, idVehiculo, idChofer, idEnfermero, idProveedor, idRuta, horaSalida, horaLlegada) VALUES
-(1, 1, 1, 1, 1, 1, '2026-09-02 08:00:00', '2026-09-02 08:30:00'),
-(2, 2, 2, 2, 2, 2, '2026-09-02 09:00:00', '2026-09-02 09:45:00'),
-(3, 3, 3, 3, 3, 3, '2026-09-02 10:00:00', '2026-09-02 10:25:00');
+(idSolicitud, idVehiculo, ciChofer, ciEnfermero, idProveedor, idRuta, horaSalida, horaLlegada) VALUES
+(1, 1, 41239102, 45678901, 1, 1, '2026-09-02 08:00:00', '2026-09-02 08:30:00'),
+(2, 2, 56517828, 47890123, 2, 2, '2026-09-02 09:00:00', '2026-09-02 09:45:00'),
+(3, 3, 57527829, 48901234, 3, 3, '2026-09-02 10:00:00', '2026-09-02 10:25:00');
 
 INSERT INTO historialEstado 
 (idTraslado, idEstado, horaLlegada, observaciones) VALUES
