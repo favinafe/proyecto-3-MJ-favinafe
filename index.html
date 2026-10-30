@@ -11,7 +11,6 @@
 <body>
 
 
-
     <div class="container-fluid h-100">
 
         <div class="row h-100">
@@ -32,32 +31,49 @@
 
                     <div class="mb-5">
 
-                        <label class="form-label etiqueta">
+                        <label class="etiquetaSup">
                             Usuario:
                         </label>
 
                         <input
+                            class="form-control campo"
                             type="text"
-                            class="form-control campo">
+                            name="usuario"
+                            placeholder="Usuario"
+                        >
+
+                        <label class="etiquetaError" hidden name="eUsr">
+                            Usuario incorrecto
+                        </label>
 
                     </div>
 
                     <div class="mb-5">
 
-                        <label class="form-label etiqueta">
+                        <label class="etiquetaSup">
                             Contraseña:
                         </label>
 
                         <input
+                            class="form-control campo"
                             type="password"
-                            class="form-control campo">
+                            name="contrasena"
+                            placeholder="Contraseña"
+                            autocomplete="username"
+                        >
+
+                        <label class="etiquetaError" hidden name="ePaswd">
+                            Contraseña incorrecta
+                        </label>
 
                     </div>
-
-                    <button class="btn boton-confirmar" onclick="window.location.href='login/vista/nexo.html'">
-                        confirmar
-                    </button>
-
+                        <button class="boton" type="submit">
+                            confirmar
+                        </button>
+                    
+                       <button class="boton">
+                           No puedo entrar
+                        </button>
                 </div>
 
             </div>
@@ -65,8 +81,5 @@
         </div>
 
     </div>
-    <button class="botAyuda">
-        No puedo entrar
-    </button>
 </body>
 </html>

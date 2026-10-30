@@ -1,13 +1,13 @@
 CREATE DATABASE IF NOT EXISTS SIGSM;
 USE SIGSM;
-
+-- Tablas Usuarios -----------------------------------
 CREATE TABLE usuario (
   idUsuario int(11) AUTO_INCREMENT,
-  nombreUsuario varchar(50) NOT NULL CHECK (octet_length(nombreUsuario) >= 4),
+  nombreUsuario varchar(50) NOT NULL UNIQUE CHECK (octet_length(nombreUsuario) >= 4),
   contrasenaHash varchar(255) NOT NULL,
   nombre varchar(50) NOT NULL,
   apellido varchar(50) NOT NULL,
-  email varchar(120) NOT NULL CHECK (email like '%_@_%.__%'),
+  email varchar(120) NOT NULL UNIQUE CHECK (email like '%_@_%.__%'),
   activo tinyint(1) NOT NULL DEFAULT 1,
   PRIMARY KEY (idUsuario)
 );
@@ -38,7 +38,7 @@ CREATE TABLE usuarioRol (
     ON DELETE RESTRICT
     ON UPDATE CASCADE
 );
-
+-- Insert Usuarios -----------------------------------
 INSERT INTO `usuario` (`nombreUsuario`, `contrasenaHash`, `nombre`, `apellido`, `email`, `activo`) VALUES
 ( 'facosta', 'qwe', 'Fabian', 'Acosta', 'facosta@sigsm.uy', 1),
 ( 'mrivero', 'qwe', 'Marcela', 'Rivero', 'mrivero@sigsm.uy', 1),
@@ -56,7 +56,7 @@ INSERT INTO `usuarioRol` (`idUsuario`, `idRol`, `fechaAsignacion`) VALUES
 (2, 2, '2026-08-19'),
 (3, 2, '2026-08-19'),
 (4, 2, '2026-08-20');
-
+-- Tablas Modulo de Encuestas y Docs -----------------------------------
 CREATE TABLE categoria (
     idCategoria int(11) AUTO_INCREMENT,
     nombre varchar(30) UNIQUE NOT NULL,
@@ -175,11 +175,7 @@ CREATE TABLE respuestaPregunta (
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
-
-
-
-
-
+-- Insert Modulo de Encuestas y Docs -----------------------------------
 INSERT INTO categoria (nombre, descripcion, codigoQrUrl) VALUES
 ('Documentos médicos', 'Documentación médica accesible mediante QR.', 'https://ejemplo.com/qr/documentos'),
 ('Encuestas', 'Encuestas para recopilar información de pacientes.', 'https://ejemplo.com/qr/encuestas'),
@@ -227,15 +223,14 @@ INSERT INTO respuestaEncuesta (idEncuesta, fechaEnvio) VALUES
 (2, '2026-09-01'),
 (3, '2026-09-02');
 
-INSERT INTO respuestaPregunta 
-(idRespuestaEncuesta, idPregunta, idOpcion) 
+INSERT INTO respuestaPregunta (idRespuestaEncuesta, idPregunta, idOpcion) 
 VALUES
 (1, 1, 1),
 (1, 2, 5),
 (2, 3, 9),
 (2, 4, 11),
 (3, 5, 13);
-
+-- Tablas Modulo de Traslados -----------------------------------
 
 CREATE TABLE tipoVehiculo (
     idTipoVehiculo int(11) AUTO_INCREMENT,
@@ -452,6 +447,8 @@ CREATE TABLE historialEstado (
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
+-- Insert Modulo de Traslados -----------------------------------
+
 INSERT INTO tipoElemento (nombre, descripcion) VALUES
 ('Camilla', 'Camilla para traslado'),
 ('Silla de ruedas', 'Silla para traslado'),
