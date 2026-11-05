@@ -34,7 +34,7 @@ body{
     font-weight:bold;
 }
 
-.etiquetaError{
+.mensajeError{
     font-size:12px;
     font-weight:bold;
     position: absolute;

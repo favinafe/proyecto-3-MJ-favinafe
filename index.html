@@ -10,7 +10,7 @@
 
 <body>
 
-
+    <form id="formLogin" novalidate>
     <div class="container-fluid h-100">
 
         <div class="row h-100">
@@ -31,40 +31,34 @@
 
                     <div class="mb-5">
 
-                        <label class="etiquetaSup">
+                        <label class="etiquetaSup" for="usuario">
                             Usuario:
                         </label>
 
                         <input
                             class="form-control campo"
                             type="text"
-                            name="usuario"
+                            id="usuario"
                             placeholder="Usuario"
                         >
-
-                        <label class="etiquetaError" hidden name="eUsr">
-                            Usuario incorrecto
-                        </label>
+                        <p class="mensajeError" id="pUsr"></p>
 
                     </div>
 
                     <div class="mb-5">
 
-                        <label class="etiquetaSup">
+                        <label class="etiquetaSup" for="contrasena">
                             Contraseña:
                         </label>
 
                         <input
                             class="form-control campo"
                             type="password"
-                            name="contrasena"
+                            id="contrasena"
                             placeholder="Contraseña"
-                            autocomplete="username"
+                    
                         >
-
-                        <label class="etiquetaError" hidden name="ePaswd">
-                            Contraseña incorrecta
-                        </label>
+                        <p class="mensajeError" id="pPaswd"></p>
 
                     </div>
                         <button class="boton" type="submit">
@@ -81,5 +75,7 @@
         </div>
 
     </div>
+    </form>
+    <script src="./login/vista/javaScript/valUsr.js"></script>
 </body>
 </html>

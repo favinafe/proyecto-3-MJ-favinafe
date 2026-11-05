@@ -3,7 +3,7 @@ USE SIGSM;
 -- Tablas Usuarios -----------------------------------
 CREATE TABLE usuario (
   idUsuario int(11) AUTO_INCREMENT,
-  nombreUsuario varchar(50) NOT NULL UNIQUE CHECK (octet_length(nombreUsuario) >= 4),
+  nombreUsuario varchar(25) NOT NULL UNIQUE CHECK (octet_length(nombreUsuario) >= 4),
   contrasenaHash varchar(255) NOT NULL,
   nombre varchar(50) NOT NULL,
   apellido varchar(50) NOT NULL,
