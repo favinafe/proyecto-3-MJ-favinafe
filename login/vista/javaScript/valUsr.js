@@ -34,6 +34,6 @@ form.addEventListener("submit", (login) => {
     }
 
     if (usrValido && pasValido) {
-        window.location.href = "/proyecto-3-MJ-favinafe/login/vista/panel";
+        window.location.href = "/proyecto-3-MJ-favinafe/login/vista/panel.html";
     }
 });
