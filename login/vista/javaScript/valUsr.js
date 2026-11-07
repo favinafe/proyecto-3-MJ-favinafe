@@ -17,23 +17,54 @@ form.addEventListener("submit", (login) => {
     pUsr.textContent = "";
     pPaswd.textContent = "";
 
-    if (usuario.length <= 4 || usuario.length >= 25 || usuario.includes(" ")) {
+    //Pasa la pasw y el usr para hacer una validacion rapida, comprueva si usr>25 o < 4, si usr tiene " " y tambien el tamaño de pasw
+    if (usuario.length <= 4 || usuario.length >= 25 || usuario.includes(" ")) 
+    {
         usrValido = false;
     }
 
-    if (contrasena.length <= 4 || contrasena.length >= 25) {
+    if (contrasena.length <= 4 || contrasena.length >= 25) 
+    {
         pasValido = false;
     }
 
-    if (!usrValido) {
+    //Muestran los mensajes de error
+    if (!usrValido) 
+    {
         pUsr.textContent = "Usuario incorrecto";
     }
 
-    if (!pasValido) {
-        pPaswd.textContent = "Contraseña incorrecta";
+    if (!pasValido) 
+    {
+        pPaswd.textContent = "Error con el servidor";
     }
 
-    if (usrValido && pasValido) {
-        window.location.href = "/proyecto-3-MJ-favinafe/login/vista/panel.html";
-    }
+
+    //Lo que ocurre si usr y pasw es valido
+    if (usrValido && pasValido) 
+        {
+        try 
+        {
+            const resp = await fetch('login.php', 
+            {
+                method: 'POST',
+                body: new FormData(form),
+                credentials: 'same-origin'   // para que la cookie de sesión se guarde
+            });
+            const data = await resp.json();
+            if (data.valido) 
+            {
+                window.location.href = 'admin.php';   break;
+            }
+        } 
+        catch (err) 
+        {
+            pUsr.textContent = "Error con el servidor";
+            pPaswd.textContent = "Error con el servidor";
+        }
+};
+   
 });
+
+  
+   
