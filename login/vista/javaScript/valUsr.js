@@ -4,7 +4,7 @@ const solPasw = document.getElementById("contrasena");
 const pUsr = document.getElementById("pUsr");
 const pPaswd = document.getElementById("pPaswd");
 
-form.addEventListener("submit", (login) => {
+form.addEventListener("submit", async (login) => {
     login.preventDefault();
 
     const usuario = solUsr.value.trim();
@@ -36,32 +36,38 @@ form.addEventListener("submit", (login) => {
 
     if (!pasValido) 
     {
-        pPaswd.textContent = "Error con el servidor";
+        pPaswd.textContent = "Contraseña incorrecta";
     }
 
 
     //Lo que ocurre si usr y pasw es valido
     if (usrValido && pasValido) 
         {
-        try 
-        {
-            const resp = await fetch('login.php', 
+ //       try 
+   //     {
+            const resp = await fetch("login/controlador/iniciarSecion.php", 
             {
-                method: 'POST',
+                method: "POST",
                 body: new FormData(form),
-                credentials: 'same-origin'   // para que la cookie de sesión se guarde
+                credentials: "same-origin" 
             });
             const data = await resp.json();
+            
             if (data.valido) 
             {
-                window.location.href = 'admin.php';   break;
+                window.location.href = data.link; 
             }
-        } 
-        catch (err) 
-        {
-            pUsr.textContent = "Error con el servidor";
-            pPaswd.textContent = "Error con el servidor";
-        }
+            else
+            {
+                pUsr.textContent = "Usuario incorrecto";
+                pPaswd.textContent = "Contraseña incorrecta";
+            }
+       // }
+   //      catch (err) 
+     //   {
+       //     pUsr.textContent = "Error con el servidor";
+         //   pPaswd.textContent = "Error con el servidor";
+        //}    
 };
    
 });

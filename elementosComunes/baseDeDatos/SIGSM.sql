@@ -40,10 +40,10 @@ CREATE TABLE usuarioRol (
 );
 -- Insert Usuarios -----------------------------------
 INSERT INTO `usuario` (`nombreUsuario`, `contrasenaHash`, `nombre`, `apellido`, `email`, `activo`) VALUES
-( 'facosta', 'qwe', 'Fabian', 'Acosta', 'facosta@sigsm.uy', 1),
-( 'mrivero', 'qwe', 'Marcela', 'Rivero', 'mrivero@sigsm.uy', 1),
-( 'jgomez', 'qwe', 'Julian', 'Gomez', 'jgomez@sigsm.uy', 0),
-( 'pepito', 'qwe', 'Jorge', 'Acosta', 'acosta@sigsm.uy', 0);
+( 'facosta', '$2y$12$mLUCq4dRLRhOll1pYQVPUe09qAKBn2D4o4B0VJPR7IYr.uFVO16yS', 'Fabian', 'Acosta', 'facosta@sigsm.uy', 1),
+( 'mrivero', '$2y$12$mLUCq4dRLRhOll1pYQVPUe09qAKBn2D4o4B0VJPR7IYr.uFVO16yS', 'Marcela', 'Rivero', 'mrivero@sigsm.uy', 1),
+( 'jgomez', '$2y$12$mLUCq4dRLRhOll1pYQVPUe09qAKBn2D4o4B0VJPR7IYr.uFVO16yS', 'Julian', 'Gomez', 'jgomez@sigsm.uy', 0),
+( 'pepito', '$2y$12$mLUCq4dRLRhOll1pYQVPUe09qAKBn2D4o4B0VJPR7IYr.uFVO16yS', 'Jorge', 'Acosta', 'acosta@sigsm.uy', 0);
 
 
 INSERT INTO `rol` (`nombreRol`, `descripcion`) VALUES

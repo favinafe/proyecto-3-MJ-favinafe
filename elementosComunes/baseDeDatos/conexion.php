@@ -1,13 +1,14 @@
 <?php
-// Conexión a la base de datos con PDO
-$host = "localhost";
-$bd   = "SIGSM";
-$user = "root";
-$pass = "";
+
+$host    = "localhost";
+$bd      = "SIGSM";
+$user    = "root";
+$pass    = "";
+$charset = "utf8mb4";
 
 try {
     $pdo = new PDO(
-        "mysql:host=$host;dbname=$bd;charset=utf8mb4",
+        "mysql:host=$host;dbname=$bd;charset=$charset",
         $user,
         $pass,
         [
@@ -17,5 +18,6 @@ try {
         ]
     );
 } catch (PDOException $e) {
-    die("Error de conexión a la base de datos.");
+    error_log("[SIGSM] Error de conexión a la base de datos: " . $e->getMessage());
+    throw new RuntimeException("No se pudo conectar a la base de datos.");
 }
