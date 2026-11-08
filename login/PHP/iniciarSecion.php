@@ -41,7 +41,6 @@ try
         || strlen($contrasena) > 72                // límite real de bcrypt
         || preg_match("/\s/", $usuario)
     ) 
-    else
     {
         fallo("Usuario o contraseña incorrectos.");
     }
@@ -109,7 +108,7 @@ try
 
   responder([
     "valido"  => true,
-    "link"    => login/vista/panel.html,
+    "link"    => "login/vista/panel.html",
     "usuario" => [
         "id"       => (int)$fila["idUsuario"],
         "usuario"  => $fila["nombreUsuario"],
