@@ -45,7 +45,7 @@ form.addEventListener("submit", async (login) => {
         {
  //       try 
    //     {
-            const resp = await fetch("login/controlador/iniciarSecion.php", 
+            const resp = await fetch("login/PHP/iniciarSecion.php", 
             {
                 method: "POST",
                 body: new FormData(form),
