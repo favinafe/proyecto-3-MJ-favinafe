@@ -1,77 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Hospital</title>
-    <link rel="stylesheet" href="login/vista/css/index.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hospital de Clínicas - Ingreso</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <form id="formLogin" novalidate>
-    <div class="container-fluid h-100">
-
-        <div class="row h-100">
-
-            <div class="col-lg-5 d-flex align-items-center">
-
-                <div class="login-card">
-
-                    <div class="d-flex justify-content-between align-items-center mb-5">
-
-                        <h1 class="titulo">
-                            Bienvenido
-                        </h1>
-
-                        <img src="elementosComunes/imagenes/logo.png" class="logo" alt="Logo">
-
-                    </div>
-
-                    <div class="mb-5">
-
-                        <label class="etiquetaSup" for="usuario">
-                            Usuario:
-                        </label>
-                            
-                        <input
-                            class="form-control campo"
-                            type="text"
-                            id="usuario"
-                            placeholder="Usuario"
-                            name="usuario"
-                        >
-                        <p class="mensajeError" id="pUsr"></p>
-                    </div>
-
-                    <div class="mb-5">
-
-                        <label class="etiquetaSup" for="contrasena">
-                            Contraseña:
-                        </label>
-
-                        <input
-                            class="form-control campo"
-                            type="password"
-                            id="contrasena"
-                            placeholder="Contraseña"
-                            name="contrasena"
-                        >
-                        <p class="mensajeError" id="pPaswd"></p>
-
-                    </div>
-                        <button class="boton" type="submit">
-                            confirmar
-                        </button>
-                </div>
-
-            </div>
-
-        </div>
-
+  <main class="card">
+    <div class="head">
+      <h1>Bienvenido</h1>
+      <img class="logo" src="img/logo.png" alt="Hospital de Clínicas Dr. Manuel Quintela">
     </div>
+    <form id="login" novalidate>
+      <label for="usuario">Usuario:</label>
+      <input id="usuario" type="text" autocomplete="username">
+      <label for="clave">Contraseña:</label>
+      <input id="clave" type="password" autocomplete="current-password">
+      <p class="msg" id="msg"></p>
+      <button class="btn" type="submit">Confirmar</button>
     </form>
-    <script src="login/vista/javaScript/valUsr.js"></script>
+  </main>
+  <a class="btn esquina" href="recuperacion.html">No puedo entrar</a>
+  <script src="data.js"></script>
+  <script src="db.js"></script>
+  <script src="script.js"></script>
+<script src="idioma.js"></script>
 </body>
 </html>

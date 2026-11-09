@@ -1,0 +1,80 @@
+body.app{display:block;padding:0;background:#f0f0f0;min-height:100vh;font-style:italic}
+.side{position:fixed;inset:0 auto 0 0;width:282px;background:#f8f8f8;border-right:1px solid #aaa;display:flex;flex-direction:column}
+.side .tit{height:102px;background:#34719d;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 14px;font-size:21px;font-weight:900;line-height:1.15}
+.side nav{margin-top:35px;display:flex;flex-direction:column;gap:11px}
+.side nav a{height:52px;background:#d1e5e6;display:flex;align-items:center;justify-content:center;font-size:25px;color:#1e1e1e;text-decoration:none}
+.side nav a.on{color:#0051ff}
+.side .logo-lateral{margin-top:auto;width:230px;height:129px;object-fit:contain;align-self:center;margin-bottom:0}
+.main{margin-left:282px;min-height:100vh}
+.top{height:60px;background:#f8f8f8;display:flex;align-items:center;gap:50px;padding:0 20px 0 40px;font-size:20px}
+.top .btn{margin-left:auto;font-size:25px;padding:6px 44px}
+.content{padding:30px 36px 40px}
+.app input,.app select,.app textarea{margin:0;height:42px;font-size:18px;padding:0 18px;border-radius:50px}
+.app textarea{height:120px;padding:12px 18px;border-radius:24px}
+.pill{background:#d1e5e6;border:none;font:inherit;font-size:22px;width:219px;height:46px!important;outline:none}
+.busca{position:relative;width:219px}
+.busca input{background:#d1e5e6;width:100%;height:46px;padding:0 48px 0 18px;font-size:22px;border:none}
+.busca svg{position:absolute;right:14px;top:10px;pointer-events:none}
+.barra{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.col{display:flex;flex-direction:column;gap:14px}.col.der{align-items:flex-end}
+.btn.b-sm{width:114px;height:52px;font-size:25px}.btn.b-lg{width:311px;height:52px;font-size:25px;line-height:52px}
+button.btn{font-style:italic}
+.tarjeta{background:rgba(250,250,250,.67);border-radius:29px;min-height:346px;padding:6px 14px;overflow-x:auto}
+.tabla{width:100%;border-collapse:collapse;min-width:560px}
+.tabla th{font-weight:300;font-size:25px;text-align:left;padding:14px 20px;border-bottom:1px solid #333}
+.tabla td{padding:12px 20px;font-size:19px;font-style:normal;cursor:pointer}
+.tabla tr.sel td{background:#d1e5e6}
+.tabla a{color:#0051ff}
+.tabs{display:flex;gap:28px;font-size:24px;border-bottom:1px solid #333;margin-bottom:26px;width:max-content;max-width:100%}
+.tabs a{color:#000;text-decoration:none;padding-bottom:6px}.tabs a.on{border-bottom:3px solid #34719d;font-weight:600}
+.form-card{background:#fafafa;border-radius:29px;padding:28px 36px 30px;max-width:1175px;margin:0 auto}
+.form-card.chico{max-width:519px}
+.form-card h2{text-align:center;font-size:26px;font-weight:300;margin-bottom:22px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 32px}
+.chico .grid{grid-template-columns:1fr}
+.campo label{display:block;font-size:22px;margin:0 0 6px 6px}
+.campo input,.campo select,.campo textarea{width:100%;background:#d9d9d9;border:none;outline:none}
+.campo.alto{grid-row:span 3}.campo.alto textarea{height:100%;min-height:130px}
+.campo .dato{font-size:20px;font-style:normal;padding:8px 6px}
+.campo.roles label{display:inline-block;margin-right:16px}.campo.roles input{width:auto;height:auto}
+.acciones{display:flex;justify-content:space-between;margin-top:26px}
+.acciones .btn{width:230px;height:48px;font-size:25px;line-height:48px}
+.chico .acciones .btn{width:114px}
+.hist{margin-top:20px;font-size:17px;font-style:normal}.hist li{margin-left:20px}
+.app .msg{margin:14px 6px 0;min-height:22px}
+.stat-ok{display:inline-block;background:#d1e5e6;border-radius:24px;padding:14px 26px;font-size:24px;margin-bottom:28px}
+.stats{background:rgba(250,250,250,.67);border-radius:29px;padding:24px 34px}
+.stats h2{font-size:26px;font-weight:300;margin-bottom:10px;border-bottom:1px solid #333;padding-bottom:10px}
+.stats .fila{margin:22px 0 4px;font-size:22px}.stats .barra-v{height:21px;background:#34719d;border-radius:4px;min-width:6px}
+.modulos{background:#d9d9d9;border-radius:6px;min-height:420px;padding:30px 40px;display:flex;flex-wrap:wrap;gap:30px;align-content:flex-start}
+.modulo{width:200px;display:flex;flex-direction:column;align-items:center;text-align:center;color:#000;text-decoration:none;font-size:24px;font-weight:900;padding:10px;border-radius:20px;transition:background .2s}
+.modulo:hover{background:rgba(255,255,255,.5)}.modulo svg{width:110px;height:110px;margin-bottom:12px}
+dialog{border:none;border-radius:24px;padding:26px 30px;max-width:520px;font-style:normal;background:#fafafa}
+dialog h3{margin-bottom:10px}dialog ul{margin:6px 0 6px 20px;font-size:16px}dialog form{margin-top:16px;text-align:right}
+@media(max-width:900px){
+  .side{position:static;width:100%;height:auto}.side nav{flex-direction:row;flex-wrap:wrap;margin-top:8px;padding:0 8px 8px}.side nav a{flex:1;min-width:140px;font-size:18px;height:44px}
+  .side .logo-lateral{display:none}.main{margin-left:0}.top{gap:16px;padding:0 12px;font-size:16px}.top .btn{padding:4px 18px;font-size:18px}
+  .content{padding:18px 12px}.grid{grid-template-columns:1fr}.campo.alto{grid-row:auto}.btn.b-lg{width:100%}.col.der{align-items:stretch}
+}
+.side .tit{gap:10px}.side .tit img{width:56px;height:56px;object-fit:contain;flex:none}
+.modulo img{width:110px;height:110px;object-fit:contain;margin-bottom:12px}
+.modulos{gap:16px;padding:30px 24px}.modulo{width:190px}
+
+/* Selector con buscador (chofer, enfermero, paciente, vehículo) */
+.combo{position:relative}
+.combo select{display:none}
+.combo .combo-lista{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:30;background:#fff;border-radius:22px;box-shadow:0 6px 18px rgba(0,0,0,.25);max-height:230px;overflow-y:auto;padding:6px 0;list-style:none;margin:0}
+.combo .combo-lista[hidden]{display:none}
+.combo .combo-lista li{padding:9px 20px;font-size:18px;cursor:pointer}
+.combo .combo-lista li:hover,.combo .combo-lista li.act{background:#d1e5e6}
+.combo .combo-lista li.vacio{color:#777;cursor:default;font-style:italic}
+.combo .combo-lista li.vacio:hover{background:none}
+
+.combo{display:block}
+.app .combo input.pill{font-size:22px;height:46px}
+
+/* Vista de solicitud: los textos largos no estiran la pantalla */
+.campo{min-width:0}
+.campo .dato{overflow-wrap:anywhere}
+.campo.alto{display:flex;flex-direction:column}
+.campo .dato.caja{flex:1 1 auto;height:0;min-height:130px;overflow-y:auto;background:#d9d9d9;border-radius:30px;padding:14px 22px;font-size:18px;line-height:1.35}
